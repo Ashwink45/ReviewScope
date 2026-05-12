@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReviewScope | Bootstrap 5 Admin Template</title>
+
+  <!-- ========== All CSS files linkup ========= -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/lineicons.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="assets/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body>
+
+  <!-- TOP PROGRESS BAR -->
+
+  <div id="topLoader" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: transparent;
+    z-index: 99999;
+    display: none;
+  ">
+
+    <div id="topProgressBar" style="
+      width: 0%;
+      height: 100%;
+      background:
+        linear-gradient(
+          90deg,
+          #2563eb,
+          #60a5fa
+        );
+
+      transition: width 0.35s ease;
+
+      box-shadow:
+        0 0 10px rgba(37,99,235,0.7);
+    "></div>
+
+  </div>
+
+  <!-- ======== sidebar-nav end =========== -->
+
+  <!-- ======== main-wrapper start =========== -->
+  <main class="main-wrapper">
+    <!-- ========== header start ========== -->
+    <header class="header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-5 col-md-5 col-6">
+            <div class="header-left d-flex align-items-center">
+              <div class="menu-toggle-btn mr-15">
+                <button id="menu-toggle" class="main-btn primary-btn btn-hover">
+                  <i class="lni lni-chevron-left me-2"></i> Menu
+                </button>
+              </div>
+              <div class="header-search d-flex">
+                <form onsubmit="analyzeApp(event)">
+                  <input type="text" id="appInput" class="form-control" placeholder="Search app (e.g. whatsapp)"
+                    style="width: 260px;" />
+                  <button type="submit">
+                    <i class="lni lni-search-alt"></i>
+                  </button>
+                </form>
+
+                <div id="loadingStatus" class="
+    small
+    text-primary
+    mt-2
+    fw-semibold
+  " style="
+    display: none;
+  ">
+                  Initializing Analysis...
+                </div>
+
+
+                <div class="col-lg-7 col-md-7 col-6">
+                  <div class="header-right">
+                  </div>
+                </div>
+              </div>
+            </div>
+    </header>
+    <!-- ========== header end ========== -->
+    <div class="tailwind-hero">
+      <script src="https://cdn.tailwindcss.com"></script>
+    </div>
+    <!-- ========== section start ========== -->
+    <section class="section">
+      <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="text-center mb-20">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">ReviewScope</h1>
+            <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">AI-powered Play Store review
+              intelligence platform
+              that dynamically analyzes live user reviews using
+              NLP, sentiment analysis, and anomaly detection.</p>
+            <div class="flex mt-6 justify-center">
+              <div class="w-16 h-1 rounded-full bg-blue-500 inline-flex"></div>
+            </div>
+          </div>
+          <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
+            <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+              <div
+                class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-500 mb-5 flex-shrink-0">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="w-10 h-10" viewBox="0 0 24 24">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              <div class="flex-grow">
+                <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Live Review Scraping</h2>
+                <p class="leading-relaxed text-base">Dynamically fetches real-time user reviews
+                  from the Google Play Store for any Android application.</p>
+                <a class="mt-3 text-blue-500 inline-flex items-center">Learn More
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+              <div
+                class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-500 mb-5 flex-shrink-0">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="w-10 h-10" viewBox="0 0 24 24">
+                  <circle cx="6" cy="6" r="3"></circle>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
+                </svg>
+              </div>
+              <div class="flex-grow">
+                <h2 class="text-gray-900 text-lg title-font font-medium mb-3">AI Sentiment Analysis</h2>
+                <p class="leading-relaxed text-base">Uses NLP-based sentiment analysis models
+                  to classify positive and negative user feedback automatically.</p>
+                <a class="mt-3 text-blue-500 inline-flex items-center">Learn More
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+              <div
+                class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-500 mb-5 flex-shrink-0">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="w-10 h-10" viewBox="0 0 24 24">
+                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <div class="flex-grow">
+                <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Version & Anomaly Analytics</h2>
+                <p class="leading-relaxed text-base">Tracks negative review spikes, version-specific complaints,
+                  and emerging product issues through interactive dashboards.</p>
+                <a class="mt-3 text-blue-500 inline-flex items-center">Learn More
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <button
+            class="flex mx-auto mt-16 text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">Analyze
+            App Reviews</button>
+        </div>
+      </section>
+      <div class="container-fluid">
+        <!-- ========== title-wrapper start ========== -->
+        <div class="title-wrapper pt-30">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="title">
+                <h2>App Review Analysis Dashboard</h2>
+              </div>
+            </div>
+            <!-- end col -->
+            <div class="col-md-6">
+              <div class="breadcrumb-wrapper">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <a href="#0">Dashboard</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      Analysis
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+            <!-- end col -->
+          </div>
+          <!-- end row -->
+        </div>
+        <!-- ========== title-wrapper end ========== -->
+        <div class="row">
+          <div class="col-xl-3 col-lg-4 col-sm-6">
+            <div class="icon-card mb-30">
+              <div class="icon purple">
+                <i class="lni lni-cart-full"></i>
+              </div>
+              <div class="content">
+                <h6 id="appNameDisplay" class="text-bold mb-10"></h6>
+                <h3 id="totalReviews" class="text-bold mb-10">0</h3>
+                <p class="text-sm text-success">
+                  <i class="lni lni-arrow-up"></i> +2.00%
+                  <span class="text-gray">(30 days)</span>
+                </p>
+              </div>
+            </div>
+            <!-- End Icon Cart -->
+          </div>
+          <!-- End Col -->
+          <div class="col-xl-3 col-lg-4 col-sm-6">
+            <div class="icon-card mb-30">
+              <div class="icon success">
+                <i class="lni lni-dollar"></i>
+              </div>
+              <div class="content">
+                <h6 class="mb-10">Positive Count</h6>
+                <h3 id="positiveReviews" class="text-bold mb-10">0</h3>
+                <p class="text-sm text-success">
+                  <i class="lni lni-arrow-up"></i> +5.45%
+                  <span class="text-gray">Increased</span>
+                </p>
+              </div>
+            </div>
+            <!-- End Icon Cart -->
+          </div>
+          <!-- End Col -->
+          <div class="col-xl-3 col-lg-4 col-sm-6">
+            <div class="icon-card mb-30">
+              <div class="icon primary">
+                <i class="lni lni-credit-cards"></i>
+              </div>
+              <div class="content">
+                <h6 class="mb-10">Negative Count</h6>
+                <h3 id="negativeReviews" class="text-bold mb-10">0</h3>
+                <p class="text-sm text-danger">
+                  <i class="lni lni-arrow-down"></i> -2.00%
+                  <span class="text-gray">Expense</span>
+                </p>
+              </div>
+            </div>
+            <!-- End Icon Cart -->
+          </div>
+          <!-- End Col -->
+          <div class="col-xl-3 col-lg-4 col-sm-6">
+            <div class="icon-card mb-30">
+              <div class="icon orange">
+                <i class="lni lni-user"></i>
+              </div>
+              <div class="content">
+                <h6 class="mb-10">Review Mismatch</h6>
+                <h3 id="mismatchReviews" class="text-bold mb-10">0</h3>
+                <p class="text-sm text-danger">
+                  <i class="lni lni-arrow-down"></i> -25.00%
+                  <span class="text-gray"> Earning</span>
+                </p>
+              </div>
+            </div>
+            <!-- End Icon Cart -->
+          </div>
+          <!-- End Col -->
+        </div>
+        <section class="text-gray-600 body-font">
+
+          <div class="container px-8 py-16 mx-auto flex flex-col items-start gap-10">
+
+            <!-- AI SUMMARY -->
+            <div class="w-full sm:p-4 px-4 mb-6">
+
+              <h1 class="font-semibold text-4xl mb-4 text-gray-900">
+                AI Product Intelligence
+              </h1>
+
+              <div id="aiSummary" class="leading-relaxed text-gray-800 text-xl font-light">
+                Waiting for AI-generated insights...
+              </div>
+
+              <div id="issueTags" class="mt-5 flex flex-wrap gap-2 items-center">
+              </div>
+
+            </div>
+
+            <!-- CARDS -->
+            <div class="w-full flex flex-wrap -m-4">
+
+              <!-- CARD 1 -->
+              <div class="p-4 sm:w-1/2 lg:w-1/4 w-full">
+
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm h-full flex flex-col">
+
+                  <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                    Risk Assessment
+                  </h3>
+
+                  <h2 id="riskLevel"
+                    class="font-black text-2xl lg:text-3xl text-gray-800 mb-2 break-words leading-tight">
+                    --
+                  </h2>
+
+                  <p class="leading-relaxed text-gray-500 mb-6">
+                    Risk Level
+                  </p>
+
+                  <div class="flex gap-1.5 w-full mb-6">
+
+                    <div class="flex-1 rounded-full h-2 bg-gray-400"></div>
+
+                    <div class="flex-1 rounded-full h-2 bg-gray-400"></div>
+
+                    <div class="flex-1 rounded-full h-2 bg-gray-200"></div>
+
+                  </div>
+
+                  <div class="mt-auto">
+
+                    <p class="leading-relaxed text-lg font-medium text-gray-800 mb-1">
+                      Active
+                    </p>
+
+                    <p class="text-gray-500">
+                      Risk Status
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- CARD 2 -->
+              <div class="p-4 sm:w-1/2 lg:w-1/4 w-full">
+
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm h-full flex flex-col">
+
+                  <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                    Critical Issues
+                  </h3>
+
+                  <h2 id="criticalIssue" class="
+              font-semibold
+              text-2xl
+              text-gray-800
+              leading-relaxed
+              break-words
+              mb-8
+            ">
+                    --
+                  </h2>
+
+                  <p class="leading-relaxed text-gray-500 mt-auto">
+                    Critical Issues
+                  </p>
+
+                </div>
+
+              </div>
+
+              <!-- CARD 3 -->
+              <div class="p-4 sm:w-1/2 lg:w-1/4 w-full">
+
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm h-full flex flex-col">
+
+                  <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                    System Metrics
+                  </h3>
+
+                  <h2 class="font-black text-5xl text-gray-800 mb-2">
+                    Qwen 2.5
+                  </h2>
+
+                  <p class="leading-relaxed text-gray-500">
+                    LLM Engine
+                  </p>
+
+                  <div class="mt-auto pt-8 flex items-center gap-2">
+
+                    <div class="w-10 h-10 bg-gray-100 rounded-lg"></div>
+
+                    <div class="w-10 h-10 bg-gray-100 rounded-lg"></div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- CARD 4 -->
+              <div class="p-4 sm:w-1/2 lg:w-1/4 w-full">
+
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm h-full flex flex-col">
+
+                  <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                    Operations
+                  </h3>
+
+                  <h2 class="font-black text-5xl text-green-600 mb-2">
+                    Live
+                  </h2>
+
+                  <p class="leading-relaxed text-gray-500 mb-8">
+                    Analysis Status
+                  </p>
+
+                  <div class="mt-auto">
+
+                    <div class="w-full h-2 bg-gray-200 rounded-full">
+
+                      <div class="w-3/4 h-2 bg-green-500 rounded-full"></div>
+
+                    </div>
+
+                    <p class="text-sm text-gray-600 mt-3">
+                      Analysis in progress
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+        <!-- End Row -->
+        <div class="dashboard-grid">
+
+          <!-- Scatter Plot -->
+          <div class="card-style scatter-card">
+
+            <div class="title d-flex justify-content-between align-items-center">
+
+              <div>
+                <h6 class="text-medium mb-10">
+                  Sentiment Review Scatterplot
+                </h6>
+
+                <h3 class="text-bold">
+                  Review Explorer
+                </h3>
+              </div>
+
+              <div class="select-style-1 mb-0">
+
+                <div class="select-position select-sm">
+
+                  <select id="scatterMode" class="light-bg">
+
+                    <option value="NEGATIVE">Negative</option>
+
+                    <option value="POSITIVE">Positive</option>
+
+                  </select>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="chart-container">
+              <canvas id="Chart1"></canvas>
+            </div>
+
+          </div>
+
+          <!-- Pie Chart -->
+          <div class="card-style pie-card">
+
+            <div class="title">
+              <h6 class="text-medium mb-30">
+                Review Distribution
+              </h6>
+            </div>
+
+            <div class="chart-container">
+              <canvas id="Chart4"></canvas>
+            </div>
+
+          </div>
+
+          <!-- Anomaly Detector -->
+          <div class="card-style anomaly-card">
+
+            <div class="title">
+              <h6 class="text-medium mb-30">
+                Live Anomaly Detector
+              </h6>
+            </div>
+
+            <div class="chart-container">
+              <canvas id="HourlySpikeChart"></canvas>
+            </div>
+
+          </div>
+
+          <!-- Version Chart -->
+          <div class="card-style version-card">
+
+            <div class="title">
+              <h6 class="text-medium mb-30">
+                Version Trend Analysis
+              </h6>
+            </div>
+
+            <div class="chart-container">
+              <canvas id="VersionChart"></canvas>
+            </div>
+
+          </div>
+
+        </div>
+        <!-- End Title -->
+        <div class="chart">
+          <div id="legend4">
+            <ul class="legend3 d-flex flex-wrap gap-3 gap-sm-0 align-items-center mb-30">
+              <li>
+                <div class="d-flex">
+                  <span class="bg-color primary-bg"> </span>
+                  <div class="text">
+                    <p class="text-sm text-success">
+                      <span class="text-dark">Store Visits</span>
+                      +25.55%
+                      <i class="lni lni-arrow-up"></i>
+                    </p>
+                    <h2>3456</h2>
+                  </div>
+                </div>
+              </li>
+              <li>
+
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- End Chart -->
+      </div>
+      </div>
+      <!-- End Col -->
+      </div>
+
+      <!-- ========== footer start =========== -->
+      <footer class="text-gray-600 body-font">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+          <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+              stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-blue-500 rounded-full"
+              viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="ml-3 text-xl">Tailblocks</span>
+          </a>
+          <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2020
+            Tailblocks —
+            <a href="https://twitter.com/knyttneve" class="text-gray-600 ml-1" rel="noopener noreferrer"
+              target="_blank">@knyttneve</a>
+          </p>
+          <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+            <a class="text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+                viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+                viewBox="0 0 24 24">
+                <path
+                  d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                </path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                class="w-5 h-5" viewBox="0 0 24 24">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                <path stroke="none"
+                  d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+        </div>
+      </footer>
+      <!-- ========== footer end =========== -->
+  </main>
+  <!-- ======== main-wrapper end =========== -->
+
+  <!-- ========= All Javascript files linkup ======== -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/Chart.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/Chart.min.js"></script>
+  <script src="assets/js/Chart.min.js"></script>
+
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/js/Chart.min.js"></script>
+
+  <script src="assets/js/main.js"></script>
+
+  <script src="assets/js/charts.js"></script>
+
+  <script src="assets/js/app.js"></script>
+
+</body>
+
+</html>

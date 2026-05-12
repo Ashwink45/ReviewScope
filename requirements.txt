@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pydantic
+google-play-scraper
+transformers
+torch
+langdetect
+pandas
+numpy
+requests
+python-dotenv
