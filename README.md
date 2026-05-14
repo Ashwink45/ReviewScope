@@ -32,4 +32,4 @@ The system combines web scraping, backend APIs, machine learning models, AI-driv
 ## Run Locally
 
 ```bash
-uvicorn src.main:app --host 0.0.0.0 --port 7860
+https://huggingface.co/spaces/ashk99/Reviewscope
